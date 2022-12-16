@@ -1,4 +1,7 @@
-const initialState = [
+// Types
+import { ValidInput } from "../../cell/valid-input/valid-input";
+
+export const initialState: ValidInput[][] = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -8,7 +11,4 @@ const initialState = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  ];
-  
-  export default initialState;
-  
+];

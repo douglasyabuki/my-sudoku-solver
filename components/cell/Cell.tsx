@@ -1,16 +1,18 @@
+// Types
+import { ValidInput } from "./valid-input/valid-input";
+
 // CSS
-import styles from './Cell.module.css'
+import styles from "./Cell.module.css";
 
-import * as React from 'react';
-
-export interface ICellProps {
+interface Props {
+  value: ValidInput;
+  onChange: React.ChangeEventHandler;
 }
 
-export default function Cell (props: ICellProps) {
+export default function Cell({ value, onChange }: Props) {
   return (
-    <div>
-      
+    <div className={styles.cell}>
+      <input value={value} onChange={onChange}></input>
     </div>
   );
 }
-

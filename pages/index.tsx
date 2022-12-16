@@ -1,16 +1,16 @@
 // Components
-import Head from 'next/head'
-import Header from '../components/header/Header'
-import Board from '../components/board/Board'
-import Footer from '../components/footer/Footer'
+import Head from "next/head";
+import Header from "../components/header/Header";
+import Board from "../components/board/Board";
+import Footer from "../components/footer/Footer";
 
 // CSS
-import styles from '../styles/Home.module.css'
+import styles from "../styles/Home.module.css";
 
 // Fonts
-import { Roboto } from '@next/font/google'
+import { Roboto } from "@next/font/google";
 
-const roboto = Roboto({ subsets: ['latin'], weight: ['400','500','700'] })
+const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export default function Home() {
   return (
@@ -26,5 +26,5 @@ export default function Home() {
       </main>
       <Footer></Footer>
     </>
-  )
+  );
 }

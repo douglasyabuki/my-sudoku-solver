@@ -1,3 +1,14 @@
-.header{
-    min-height: 10vh;
+.header {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px 0px;
+  font-size: 20px;
+  color: #012d54;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  text-align: center;
+  position: fixed;
+  z-index: 999999;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  min-height: 10vh;
 }

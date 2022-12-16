@@ -1,3 +1,10 @@
-.footer{
-    min-height: 15vh;
+.footer {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 15vh;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 3rem 0;
 }

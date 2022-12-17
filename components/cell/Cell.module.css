@@ -1,3 +1,29 @@
-.cell{
+.cell {
+  margin: 0 auto;
+  display: flex;
+}
 
+.cell input {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid black;
+  font-size: 20px;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Removing arrows from number input */
+.cell input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cell input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cell input[type="number"] {
+  -moz-appearance: textfield;
 }

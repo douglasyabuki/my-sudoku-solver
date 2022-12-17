@@ -1,3 +1,35 @@
 .game {
   margin: 0 auto;
 }
+
+.board {
+  border: 10px solid #0d0d0d;
+  background-color: #BEBDBF;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  display: flex;
+}
+
+/* Line drawers */
+.board .row:nth-child(3) {
+  border-bottom: solid 2px #0d0d0d;
+}
+
+.board .row:nth-child(6) {
+  border-bottom: solid 2px #0d0d0d;
+}
+
+.row :nth-child(3) {
+  border-right: solid 2px #0d0d0d;
+}
+
+.row :nth-child(6) {
+  border-right: solid 2px #0d0d0d;
+}

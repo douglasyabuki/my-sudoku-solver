@@ -1,0 +1,18 @@
+.buttonContainer {
+}
+
+.buttonContainer button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #141539;
+  box-shadow: -5px -5px 10px #111230, 5px 5px 10px #171842;
+  color: #f2f2f2;
+  border-color: #f2f2f2;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.buttonContainer button:hover {
+  box-shadow: -10px -10px 20px #111230, 10px 10px 20px #171842;
+}

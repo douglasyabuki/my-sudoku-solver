@@ -4,7 +4,7 @@
 
 .board {
   border: 10px solid #0d0d0d;
-  background-color: #BEBDBF;
+  background-color: #bebdbf;
   display: flex;
   flex-direction: column;
 }
@@ -14,6 +14,16 @@
 }
 
 .cell {
+  display: flex;
+}
+
+.buttonsContainer {
+  padding-top: 2rem;
+  width: 250px;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
   display: flex;
 }
 

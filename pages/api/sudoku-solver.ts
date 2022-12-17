@@ -165,8 +165,12 @@ function validSquare(board: Board) {
 // This is the API function itself. It only accepts the POST method.
 export default function (req: NextApiRequest, res: NextApiResponse) {
     if (req.method === "POST") {
-        let parsedString: Board = JSON.parse(req.body.board);
-        res.status(200).send({ solution: solve(parsedString) })
+        try {
+            let parsedString: Board = JSON.parse(req.body.board);
+            res.status(200).send({ solution: solve(parsedString) })
+        } catch (err) {
+            res.status(500).json({ error: "Failed to Load Data" });
+        }
     } else if (req.method === "GET") {
         res.status(405).end("Method not allowed, use POST method instead");
     } else {

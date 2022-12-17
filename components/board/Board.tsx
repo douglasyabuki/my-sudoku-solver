@@ -1,8 +1,8 @@
 // Hooks
 import React, { useState } from "react";
+import { useFetch } from "../../hooks/useFetch";
 
 // Components
-import { ChangeEvent } from "react";
 import Cell from "../cell/Cell";
 import Button from "../button/Button";
 
@@ -15,8 +15,9 @@ import styles from "./Board.module.css";
 
 // This function is the game itself
 export default function Board() {
-  const [currentBoard, setCurrentBoard] = useState<number[][]>(boardExample);
+  const [currentBoard, setCurrentBoard] = useState<number[][]>(initialState);
 
+  // Function to change a cell input
   const onInputChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     rowId: number,
@@ -28,11 +29,22 @@ export default function Board() {
     console.log(currentBoard);
   };
 
-  const resetBoard = () => {
-    let copyBoard = [...initialState]
-    setCurrentBoard(copyBoard);
-  }
+  const solution = useFetch({
+    onSuccess: (response) => setCurrentBoard(response.solution),
+  });
 
+  // Function to clear the board
+  const resetBoard = () => {
+    let copyBoard = [...initialState];
+    for (let row = 0; row < 9; row++) {
+      for (let col = 0; col < 9; col++) {
+        copyBoard[row][col] = 0;
+      }
+    }
+    setCurrentBoard(copyBoard);
+  };
+
+  // Main function return
   return (
     <div className={styles.game}>
       <div className={styles.board}>
@@ -50,7 +62,7 @@ export default function Board() {
         ))}
       </div>
       <div className={styles.buttonsContainer}>
-        <Button value="Teste" onClick={() => resetBoard()}></Button>
+        <Button value="Solve" onClick={() => solution.get(currentBoard)}></Button>
         <Button value="Reset" onClick={() => resetBoard()}></Button>
       </div>
     </div>

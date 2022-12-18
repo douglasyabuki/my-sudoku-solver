@@ -7,7 +7,6 @@ import Cell from "../cell/Cell";
 import Button from "../button/Button";
 
 // Constants
-import { boardExample } from "./board-values/board-example";
 import { initialState } from "./board-values/initial-state";
 
 // CSS
@@ -26,9 +25,9 @@ export default function Board() {
     let copyBoard = [...currentBoard];
     copyBoard[rowId][colId] = +e.target.value;
     setCurrentBoard(copyBoard);
-    console.log(currentBoard);
   };
 
+  // Function to set the solved board by calling the custom hook
   const solution = useFetch({
     onSuccess: (response) => setCurrentBoard(response.solution),
   });

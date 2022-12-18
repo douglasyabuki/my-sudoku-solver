@@ -1,7 +1,7 @@
-.main{
-    display: flex;
-    margin: 0 auto;
-    text-align: center;
-    align-items: center;
-    min-height: 90vh;
-  }
+.main {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  min-height: 90vh;
+}

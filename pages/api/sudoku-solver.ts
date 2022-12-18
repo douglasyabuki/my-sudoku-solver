@@ -4,29 +4,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 // Creating a type to avoid repetition
 type Board = number[][]
 
-const initialBoard: Board = [
-    [0, 0, 0, 0, 0, 0, 8, 0, 0],
-    [0, 0, 4, 0, 0, 8, 0, 0, 9],
-    [0, 7, 0, 0, 0, 0, 0, 0, 5],
-    [0, 1, 0, 0, 7, 5, 0, 0, 8],
-    [0, 5, 6, 0, 9, 1, 3, 0, 0],
-    [7, 8, 0, 0, 0, 0, 0, 0, 0],
-    [0, 2, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 9, 3, 0, 0, 1, 0],
-    [0, 0, 5, 7, 0, 0, 4, 0, 3]
-];
-export const initialState: Board = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-];
-
 // Functions to solve the puzzle 
 function solve(board: Board): Board | boolean {
     if (solved(board)) {
@@ -166,8 +143,16 @@ function validSquare(board: Board) {
 export default function (req: NextApiRequest, res: NextApiResponse) {
     if (req.method === "POST") {
         try {
-            let parsedString: Board = JSON.parse(req.body.board);
-            res.status(200).send({ solution: solve(parsedString) })
+            const parsedString: Board = JSON.parse(req.body.board);
+            const solvedPuzzle = () => {
+                let result = solve(parsedString)
+                if (!result) {
+                    res.status(400).end("Unsolvable puzzle");
+                    result = parsedString;
+                }
+                return result;
+            };
+            res.status(200).send({ solution: solvedPuzzle() })
         } catch (err) {
             res.status(500).json({ error: "Failed to Load Data" });
         }

@@ -13,6 +13,11 @@
   justify-content: center;
 }
 
+.cell input:focus{
+  outline: none;
+  background: rgba(39, 60, 255, 0.3);
+}
+
 /* Removing arrows from number input */
 .cell input::-webkit-outer-spin-button {
   -webkit-appearance: none;

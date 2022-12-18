@@ -1,6 +1,9 @@
 // Hooks
 import { useState } from "react";
 
+// Const
+import { initialState } from "../pages/api/sudoku-solver";
+
 // Function to stringify the board
 function encodeParams(params: any): string {
     const encodeBoard = (board: number[][]): string =>
@@ -16,7 +19,7 @@ function encodeParams(params: any): string {
 
 // Custom hook to fetch data
 export function useFetch(options: {
-    onSuccess: (response: {solution: number[][]}) => void;
+    onSuccess: (response: { solution: number[][]}) => void;
     onError?: any;
 }) {
     const [loading, setLoading] = useState(false);

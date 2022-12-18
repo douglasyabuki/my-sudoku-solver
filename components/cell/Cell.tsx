@@ -7,11 +7,11 @@ interface Props {
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-// When called, this cell function displays a single sudoku square
+// This function displays a single sudoku square
 export default function Cell({ value, onChange }: Props) {
   return (
     <div className={styles.cell}>
-      <input value={value || ""} onChange={onChange} type="number"></input>
+      <input type="number" min={0} max={9} value={value || ""} onChange={onChange}></input>
     </div>
   );
 }

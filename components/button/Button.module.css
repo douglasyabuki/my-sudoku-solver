@@ -1,18 +1,65 @@
-.buttonContainer {
-}
-
+/* Mobile First */
 .buttonContainer button {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
+  font-size: 20px;
+  font-weight: 500;
   border-radius: 50%;
   background: #141539;
   box-shadow: -5px -5px 10px #111230, 5px 5px 10px #171842;
   color: #f2f2f2;
   border-color: #f2f2f2;
-  font-size: 25px;
-  font-weight: 500;
 }
 
 .buttonContainer button:hover {
   box-shadow: -10px -10px 20px #111230, 10px 10px 20px #171842;
+}
+
+/* iPads & tablets */
+@media (min-width: 479.999px) {
+  .buttonContainer button {
+    width: 100px;
+    height: 100px;
+    font-size: 25px;
+    font-weight: 500;
+  }
+}
+
+/* Small screens */
+@media (min-width: 767.999px) {
+  .buttonContainer button {
+    width: 120px;
+    height: 120px;
+    font-size: 30px;
+  }
+}
+
+/* Medium screens */
+@media (min-width: 1023.999px) {
+  .buttonContainer button {
+    width: 100px;
+    height: 100px;
+    font-size: 25px;
+
+  }
+}
+
+/* Large screens */
+@media (min-width: 1919.999px){
+  .buttonContainer button {
+    width: 150px;
+    height: 150px;
+    font-size: 35px;
+    font-weight: 500;
+  }
+}
+
+/* Larger screens */
+@media (min-width: 2559.999px){
+  .buttonContainer button {
+    width: 200px;
+    height: 200px;
+    font-size: 50px;
+    font-weight: 500;
+  }
 }

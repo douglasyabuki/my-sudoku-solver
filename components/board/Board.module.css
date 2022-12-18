@@ -1,9 +1,11 @@
+/* Mobile First */
 .game {
+  padding-top: 4rem;
   margin: 0 auto;
 }
 
 .board {
-  border: 10px solid #0d0d0d;
+  border: 10px solid #181818;
   background-color: #bebdbf;
   display: flex;
   flex-direction: column;
@@ -19,7 +21,7 @@
 
 .buttonsContainer {
   padding-top: 2rem;
-  width: 250px;
+  width: 200px;
   height: 100px;
   align-items: center;
   justify-content: space-between;
@@ -42,4 +44,40 @@
 
 .row :nth-child(6) {
   border-right: solid 2px #0d0d0d;
+}
+
+/* iPads & tablets */
+@media (min-width: 479.999px){
+  .buttonsContainer {
+    padding-top: 3rem;
+    width: 250px;
+    height: 100px;
+  }
+}
+
+/* Small screens */
+@media (min-width: 767.999px){
+  .buttonsContainer {
+    padding-top: 3rem;
+    width: 300px;
+    height: 120px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1919.999px){
+  .buttonsContainer {
+    padding-top: 4rem;
+    width: 350px;
+    height: 150px;
+  }
+}
+
+/* Larger screens */
+@media (min-width: 2559.999px){
+  .buttonsContainer {
+    padding-top: 4rem;
+    width: 500px;
+    height: 200px;
+  }
 }

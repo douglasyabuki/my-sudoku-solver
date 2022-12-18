@@ -1,9 +1,6 @@
 // Hooks
 import { useState } from "react";
 
-// Const
-import { initialState } from "../pages/api/sudoku-solver";
-
 // Function to stringify the board
 function encodeParams(params: any): string {
     const encodeBoard = (board: number[][]): string =>
